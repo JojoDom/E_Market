@@ -1,31 +1,30 @@
+import 'package:e_market/User/signin_page.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({ Key? key }) : super(key: key);
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const GoogleSignIn());
+}
 
+class GoogleSignIn extends StatefulWidget {
+  const GoogleSignIn({ Key? key }) : super(key: key);
+
+  @override
+  _GoogleSignInState createState() => _GoogleSignInState();
+}
+
+class _GoogleSignInState extends State<GoogleSignIn> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title : 'Home',
-      theme: ThemeData(
-    primarySwatch : Colors.blue
-      ),
+      title: 'E_Market',
       debugShowCheckedModeBanner: false,
-      home :const MyHomeScreen()
-      
-    );
-  }
-}
-
-class MyHomeScreen extends StatelessWidget {
-  const MyHomeScreen({ Key? key }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar:AppBar(
-        title: const Text('hi')
-      )
+      theme: ThemeData(
+        primarySwatch:Colors.green
+      ),
+      home: const SignInPage(),
     );
   }
 }
