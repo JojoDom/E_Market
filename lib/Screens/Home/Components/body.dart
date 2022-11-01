@@ -8,13 +8,15 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return 
-      Column(
-         mainAxisAlignment : MainAxisAlignment.center,
-        children: const <Widget>[
-           CarouselSliderPage(),
-           AllCategories()
-
-                ]
+      Expanded(
+        child: Column(
+           mainAxisAlignment : MainAxisAlignment.center,
+          children: const <Widget>[
+             CarouselSliderPage(),
+             AllCategories()
+      
+                  ]
+        ),
       );
       
     

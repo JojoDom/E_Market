@@ -13,10 +13,6 @@ class AllCategories extends StatelessWidget {
       
       crossAxisAlignment : CrossAxisAlignment.start,
       children :< Widget>[
-        const Padding(
-           padding:  EdgeInsets.symmetric(horizontal: kDefaultPadding),
-           child : Text('All Products')
-        ), 
         Expanded(
           child : Padding (
             padding : const EdgeInsets.symmetric(horizontal: kDefaultPadding),
